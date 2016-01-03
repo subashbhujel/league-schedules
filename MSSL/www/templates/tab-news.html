@@ -1,0 +1,12 @@
+<ion-view view-title="News">
+    <ion-content>
+        <div  ng-repeat="newsItem in news">
+            <div class="item item-divider">{{newsItem.date}}</div>
+            <div class="item item-body">
+                <div>
+                    {{newsItem.detail}}
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
