@@ -1,4 +1,15 @@
-<ion-view view-title="Standing">
+<ion-view view-title="Standing" ng-controller="LeaguesCtrl as vm">
+    <ion-content>
+        <div class="list">
+            <a class="item" ng-repeat="league in vm.leagues">
+                {{league.divisionName}}
+                {{league.divisionTeams}}
+                <!--{{league.divisionTeams.coach}}-->
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
+<!--<ion-view view-title="Standing">
     <ion-content>
         <ion-list>
             <ion-item class="item-remove-animate item-avatar item-icon-right"
@@ -16,4 +27,4 @@
             </ion-item>
         </ion-list>
     </ion-content>
-</ion-view>
+</ion-view>-->

@@ -1,4 +1,4 @@
-<ion-view view-title="News">
+<!--<ion-view view-title="News">
     <ion-content>
         <div  ng-repeat="newsItem in news">
             <div class="item item-divider">{{newsItem.date}}</div>
@@ -8,5 +8,16 @@
                 </div>
             </div>
         </div>
+    </ion-content>
+</ion-view>-->
+
+<ion-view view-title="News" ng-controller="LeaguesCtrl as vm">
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item class="item-icon-right" ng-repeat="league in vm.leagues">
+                {{league.divisionName}}
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
