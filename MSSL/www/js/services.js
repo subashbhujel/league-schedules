@@ -128,5 +128,47 @@ angular.module('starter.services', [])
             return null;
         }
     };
+})
+
+.factory('Standing', function () {
+    var Standing = JSON.parse('[{"divisionName":"Premier Division","divisionTeams":[{"id":100,"name":"Blue Salad Bown","Manager":"Subash Bhujel"},{"id":101,"name":"DeJong","Manager":"Jacob Silverman"},{"id":102,"name":"Stone","Manager":"Eddie OMalley"},{"id":103,"name":"Seaturks","Manager":"Marty Libinski"},{"id":104,"name":"ShowTime","Manager":"Darryl Adams"},{"id":105,"name":"Perspolis","Manager":"Don Carpenter"},{"id":106,"name":"The POT","Manager":"Don Carpenter"},{"id":107,"name":"LIVE","Manager":"Don Carpenter"},{"id":108,"name":".net United","Manager":"Don Carpenter"},{"id":106,"name":"Red Salad Bowl","Manager":"Don Carpenter"}]},{"divisionName":"First Division","divisionTeams":[{"id":200,"name":"FC Chargers","Manager":"Terrance Taylor"},{"id":201,"name":"Arsenal","Manager":"Anthony Tookes"},{"id":202,"name":"Fossil","Manager":"Jordan Knisley"},{"id":203,"name":"Camoteros","Manager":"Eric Levi"},{"id":204,"name":"Falcons","Manager":"Brian Jackson"},{"id":205,"name":"Pickup United","Manager":"Brian Jackson"},{"id":206,"name":"Bad Wolf","Manager":"Brian Jackson"},{"id":207,"name":"Aim for the .net","Manager":"Brian Jackson"},{"id":208,"name":"WPS","Manager":"Brian Jackson"}]}]');
+    //var Games = [{
+    //    id: 0,
+    //    detail: 'Chargers vs Falcons',
+    //    date: '1/1/2016',
+    //    field: '6',
+    //    time: '10:00am'
+    //},
+    //{
+    //    id: 1,
+    //    detail: 'Chargers vs Showtime',
+    //    date: '1/8/2016',
+    //    field: '3',
+    //    time: '1:00pm'
+    //},
+    //{
+    //    id: 2,
+    //    detail: 'Chargers vs Charmander',
+    //    date: '1/15/2016',
+    //    field: '5',
+    //    time: '6:50pm'
+    //}];
+
+    return {
+        all: function () {
+            return Standing;
+        },
+        remove: function (game) {
+            Standing.splice(Standing.indexOf(game), 1);
+        },
+        get: function (game) {
+            for (var i = 0; i < Standing.length; i++) {
+                if (Standing[i].id === parseInt(game)) {
+                    return Standing[i];
+                }
+            }
+            return null;
+        }
+    };
 });
 

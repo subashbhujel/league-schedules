@@ -3,13 +3,19 @@ angular.module('starter.controllers', [])
 .controller('NewsCtrl', function ($scope, News) {
     $scope.news = News.all();
 })
-.controller('GamesCtrl', function ($scope, Games) {
+.controller('GamesCtrl', function ($scope, $state, Games) {
     $scope.games = Games.all();
+
+    $scope.selectGame = function () {
+        $state.go("tab.news");
+    }
 })
-.controller('StandingCtrl', function ($scope, Chats) {
-    $scope.chats = Chats.all();
-    $scope.remove = function (chat) {
-        Chats.remove(chat);
+.controller('StandingCtrl', function ($scope, Standing) {
+    $scope.standing = Standing.all();
+    console.log($scope.standing);
+
+    $scope.remove = function (team) {
+        Standing.remove(team);
     }
 })
 

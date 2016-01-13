@@ -1,6 +1,7 @@
 ﻿<ion-view view-title="Games">
     <ion-content class="padding">
-        <div class="list card" ng-repeat="game in games">
+        <div class="list card" ng-repeat="game in games"
+             ng-click="selectGame()">
             <div class="item item-divider">{{game.date}} {{game.time}} Field:{{game.field}}</div>
             <div class="item item-body">
                 <div>{{game.detail}}</div>

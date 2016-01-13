@@ -6,9 +6,9 @@
     function LeaguesCtrl(leagueApi) {
         var vm = this;
 
-        //var leagues = leagueApi.getLeagues();
-        var leagueData = leagueApi.getLeagueData();
-        vm.leagues = leagueData;
-        //console.log(leagues, leagueData);
+        vm.leaguesData = leagueApi.getLeagueData();
+        vm.news= leagueApi.getNews();
+
+        console.log(vm.leaguesData);
     };
 })();
