@@ -13,13 +13,32 @@
     <ion-content>
         <div class="list">
             <div ng-repeat="division in standing" type="item-text-wrap">
-                <div class="item item-divider item-energized">
+                <div class="item item-divider item-energized" align="center">
                     {{division.divisionName}}
                 </div>
-                <a class="item item-icon-right" ng-repeat="team in division.divisionTeams">
-                    {{team.name}}<i class="icon ion-chevron-right icon-accessory"></i>
+                <div class="row">
+                    <div class="col"><p></p></div>
+                    <div class="col-10"><h5>P</h5></div>
+                    <div class="col-10"><h5>W</h5></div>
+                    <div class="col-10"><h5>D</h5></div>
+                    <div class="col-10"><h5>L</h5></div>
+                    <div class="col-10"><h5>G</h5></div>
+                    <div class="col-10"><h5>GD</h5></div>
+                    <div class="col-10"><h5>Pts</h5></div>
+                </div>
+                <a class="item" ng-repeat="team in division.divisionStandings">
+                    <div class="row">
+                        <div class="col"><h5 class="positive">{{team.teamName}}</h5></div>
+                        <div class="col-10"><h5>0</h5></div>
+                        <div class="col-10"><h5>{{team.wins}}</h5></div>
+                        <div class="col-10"><h5>0</h5></div>
+                        <div class="col-10"><h5>{{team.losses}}</h5></div>
+                        <div class="col-10"><h5>0</h5></div>
+                        <div class="col-10"><h5>{{team.pointsDiff}}</h5></div>
+                        <div class="col-10"><h5 class="positive">{{team.pointsFor}}</h5></div>
+                    </div>
+                    <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
                 </a>
-                
             </div>
         </div>
     </ion-content>
