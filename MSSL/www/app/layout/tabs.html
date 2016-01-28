@@ -1,0 +1,27 @@
+<!--
+Create tabs with an icon and label, using the tabs-stable style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light tabs-stable">
+
+    <!-- Dashboard Tab -->
+    <ion-tab title="News" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/news">
+        <ion-nav-view name="tab-news"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Upcoming Games -->
+    <ion-tab title="Games" icon-off="ion-ios-football-outline" icon-on="ion-ios-football" href="#/tab/games">
+        <ion-nav-view name="tab-games"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Standing Tab -->
+    <ion-tab title="Standings" icon-off="ion-ios-grid-view-outline" icon-on="ion-ios-grid-view" ui-sref="tab.standing"> <!--href="#/tab/standing">-->
+        <ion-nav-view name="tab-standing"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Account Tab -->
+    <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+        <ion-nav-view name="tab-account"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

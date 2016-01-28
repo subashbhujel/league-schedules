@@ -33,7 +33,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       .state('tab', {
           url: "/tab",
           abstract: true,
-          templateUrl: "templates/tabs.html"
+          templateUrl: "app/layout/tabs.html"
       })
 
     // Each tab has its own nav history stack:
@@ -42,7 +42,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         url: '/news',
         views: {
             'tab-news': {
-                templateUrl: 'templates/tab-news.html',
+                templateUrl: 'app/templates/tab-news.html',
                 controller: 'NewsCtrl'
             }
         }
@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         url: '/games',
         views: {
             'tab-games': {
-                templateUrl: 'templates/tab-games.html',
+                templateUrl: 'app/templates/tab-games.html',
                 controller: 'GamesCtrl'
             }
         }
@@ -60,32 +60,46 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         url: '/standing',
         views: {
             'tab-standing': {
-                templateUrl: 'templates/tab-standing.html',
+                templateUrl: 'app/templates/tab-standing.html',
                 controller: 'StandingCtrl'
             }
         }
     })
-      //.state('tab.chat-detail', {
-      //    url: '/chats/:chatId',
-      //    views: {
-      //        'tab-chats': {
-      //            templateUrl: 'templates/chat-detail.html',
-      //            controller: 'ChatDetailCtrl'
-      //        }
-      //    }
-      //})
-
     .state('tab.account', {
         url: '/account',
         views: {
             'tab-account': {
-                templateUrl: 'templates/tab-account.html',
+                templateUrl: 'app/templates/tab-account.html',
                 controller: 'AccountCtrl'
+            }
+        }
+    })
+    .state('app', {
+        abstract: true,
+        url: '/app',
+        templateUrl: 'app/layout/menu-layout.html'
+    })
+      .state('app.team', {
+          url: '/team',
+          views: {
+              'mainContent': {
+                  templateUrl: 'app/team/team.html'//,
+                  //controller: 'TeamCtrl'
+              }
+          }
+      })
+    .state('app.location', {
+        url: '/location',
+        views: {
+            'mainContent': {
+                templateUrl: 'app/templates/location.html'//,
+                //controller: 'TeamCtrl'
             }
         }
     });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/news');
+    //$urlRouterProvider.otherwise('/app');
 
 });

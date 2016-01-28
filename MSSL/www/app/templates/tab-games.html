@@ -11,11 +11,11 @@
         <div ng-repeat="game in games">
             <p class="positive">{{game.time}}</p>            
             <div class="row">
-                <div class="col"><p>{{game.team1}}</p></div>
+                <div class="col"><p><a ui-sref="app.team">{{game.team1}} </a></p></div>
                 <div class="col"><p>vs</p></div>
                 <div class="col"><p>{{game.team2}}</p></div>                                                
             </div>
-            <div class="row"><a ng-href="#">Location: {{game.location}}</a></div>
+            <div class="row"><a ui-sref="app.location">Location: {{game.location}}</a></div>
         </div>
     </div>
     </ion-content>
